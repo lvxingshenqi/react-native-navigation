@@ -11,6 +11,11 @@
 		261108801E6C495400BF5D98 /* UIViewController+Rotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611087F1E6C495400BF5D98 /* UIViewController+Rotation.m */; };
 		26714EAC1EB0E9D3009F4D52 /* RCCCustomTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26714EAB1EB0E9D3009F4D52 /* RCCCustomTitleView.m */; };
 		26AFF3F51D7EEE2400CBA211 /* RCCTitleViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AFF3F41D7EEE2400CBA211 /* RCCTitleViewHelper.m */; };
+		388C0F261F1C5AC40057AF61 /* CBZRasterSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 388C0F211F1C5AC40057AF61 /* CBZRasterSplashView.m */; };
+		388C0F271F1C5AC40057AF61 /* CBZSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 388C0F231F1C5AC40057AF61 /* CBZSplashView.m */; };
+		388C0F281F1C5AC40057AF61 /* CBZVectorSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 388C0F251F1C5AC40057AF61 /* CBZVectorSplashView.m */; };
+		388C0F2E1F1C5D810057AF61 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 388C0F2D1F1C5D810057AF61 /* UIColor+HexString.m */; };
+		388C0F311F1C5F720057AF61 /* UIBezierPath+Shapes.m in Sources */ = {isa = PBXBuildFile; fileRef = 388C0F301F1C5F720057AF61 /* UIBezierPath+Shapes.m */; };
 		CC84A19E1C1A0C4E00B3A6A2 /* RCCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC84A1941C1A0C4E00B3A6A2 /* RCCManager.m */; };
 		CC84A19F1C1A0C4E00B3A6A2 /* RCCManagerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = CC84A1961C1A0C4E00B3A6A2 /* RCCManagerModule.m */; };
 		CC84A1A01C1A0C4E00B3A6A2 /* RCCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC84A1981C1A0C4E00B3A6A2 /* RCCNavigationController.m */; };
@@ -58,6 +63,18 @@
 		26714EAB1EB0E9D3009F4D52 /* RCCCustomTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCCustomTitleView.m; sourceTree = "<group>"; };
 		26AFF3F31D7EEE2400CBA211 /* RCCTitleViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCCTitleViewHelper.h; path = Helpers/RCCTitleViewHelper.h; sourceTree = "<group>"; };
 		26AFF3F41D7EEE2400CBA211 /* RCCTitleViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCCTitleViewHelper.m; path = Helpers/RCCTitleViewHelper.m; sourceTree = "<group>"; };
+		388C0F201F1C5AC40057AF61 /* CBZRasterSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBZRasterSplashView.h; sourceTree = "<group>"; };
+		388C0F211F1C5AC40057AF61 /* CBZRasterSplashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBZRasterSplashView.m; sourceTree = "<group>"; };
+		388C0F221F1C5AC40057AF61 /* CBZSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBZSplashView.h; sourceTree = "<group>"; };
+		388C0F231F1C5AC40057AF61 /* CBZSplashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBZSplashView.m; sourceTree = "<group>"; };
+		388C0F241F1C5AC40057AF61 /* CBZVectorSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBZVectorSplashView.h; sourceTree = "<group>"; };
+		388C0F251F1C5AC40057AF61 /* CBZVectorSplashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBZVectorSplashView.m; sourceTree = "<group>"; };
+		388C0F2A1F1C5D810057AF61 /* snapchatIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snapchatIcon.png; sourceTree = "<group>"; };
+		388C0F2B1F1C5D810057AF61 /* twitterIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterIcon.png; sourceTree = "<group>"; };
+		388C0F2C1F1C5D810057AF61 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		388C0F2D1F1C5D810057AF61 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
+		388C0F2F1F1C5F110057AF61 /* UIBezierPath+Shapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Shapes.h"; sourceTree = "<group>"; };
+		388C0F301F1C5F720057AF61 /* UIBezierPath+Shapes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Shapes.m"; sourceTree = "<group>"; };
 		CC84A1931C1A0C4E00B3A6A2 /* RCCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCManager.h; sourceTree = "<group>"; };
 		CC84A1941C1A0C4E00B3A6A2 /* RCCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = RCCManager.m; sourceTree = "<group>"; tabWidth = 2; };
 		CC84A1951C1A0C4E00B3A6A2 /* RCCManagerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCManagerModule.h; sourceTree = "<group>"; };
@@ -132,6 +149,32 @@
 			path = RCCToolBar;
 			sourceTree = "<group>";
 		};
+		388C0F1F1F1C5AC30057AF61 /* CBZSplashView */ = {
+			isa = PBXGroup;
+			children = (
+				388C0F201F1C5AC40057AF61 /* CBZRasterSplashView.h */,
+				388C0F211F1C5AC40057AF61 /* CBZRasterSplashView.m */,
+				388C0F221F1C5AC40057AF61 /* CBZSplashView.h */,
+				388C0F231F1C5AC40057AF61 /* CBZSplashView.m */,
+				388C0F241F1C5AC40057AF61 /* CBZVectorSplashView.h */,
+				388C0F251F1C5AC40057AF61 /* CBZVectorSplashView.m */,
+				388C0F2F1F1C5F110057AF61 /* UIBezierPath+Shapes.h */,
+				388C0F301F1C5F720057AF61 /* UIBezierPath+Shapes.m */,
+			);
+			path = CBZSplashView;
+			sourceTree = "<group>";
+		};
+		388C0F291F1C5D810057AF61 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				388C0F2A1F1C5D810057AF61 /* snapchatIcon.png */,
+				388C0F2B1F1C5D810057AF61 /* twitterIcon.png */,
+				388C0F2C1F1C5D810057AF61 /* UIColor+HexString.h */,
+				388C0F2D1F1C5D810057AF61 /* UIColor+HexString.m */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		D85082BB1CBCF42400FDB961 /* RCCDrawerController */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +242,8 @@
 		D8AFADB41BEE6F3F00A4592D = {
 			isa = PBXGroup;
 			children = (
+				388C0F291F1C5D810057AF61 /* SupportingFiles */,
+				388C0F1F1F1C5AC30057AF61 /* CBZSplashView */,
 				D8D779951D04B7180050CFEA /* Helpers */,
 				260804D51CE0D7090094DBA1 /* RCCToolBar */,
 				D85082BB1CBCF42400FDB961 /* RCCDrawerController */,
@@ -312,9 +357,14 @@
 				D84813191C8C5EB700051BAF /* RCCLightBox.m in Sources */,
 				CC84A19E1C1A0C4E00B3A6A2 /* RCCManager.m in Sources */,
 				26714EAC1EB0E9D3009F4D52 /* RCCCustomTitleView.m in Sources */,
+				388C0F261F1C5AC40057AF61 /* CBZRasterSplashView.m in Sources */,
 				D85082E21CBCF54200FDB961 /* RCCTheSideBarManagerViewController.m in Sources */,
 				D85082FC1CBCF8A800FDB961 /* MMDrawerBarButtonItem.m in Sources */,
 				D85083001CBCF8A800FDB961 /* UIViewController+MMDrawerController.m in Sources */,
+				388C0F271F1C5AC40057AF61 /* CBZSplashView.m in Sources */,
+				388C0F2E1F1C5D810057AF61 /* UIColor+HexString.m in Sources */,
+				388C0F311F1C5F720057AF61 /* UIBezierPath+Shapes.m in Sources */,
+				388C0F281F1C5AC40057AF61 /* CBZVectorSplashView.m in Sources */,
 				D85082FF1CBCF8A800FDB961 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				D85082E61CBCF54200FDB961 /* SidebarFeedlyAnimation.m in Sources */,
 				CC84A1A11C1A0C4E00B3A6A2 /* RCCTabBarController.m in Sources */,

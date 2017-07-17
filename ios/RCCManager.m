@@ -2,11 +2,17 @@
 #import <React/RCTBridge.h>
 #import <React/RCTRedBox.h>
 #import <Foundation/Foundation.h>
+#import "CBZSplashView.h"
+#import "UIColor+HexString.h"
+#import "UIBezierPath+Shapes.h"
+
+static NSString * const kTwitterColor = @"FED600";
 
 @interface RCCManager() <RCTBridgeDelegate>
 @property (nonatomic, strong) NSMutableDictionary *modulesRegistry;
 @property (nonatomic, strong) RCTBridge *sharedBridge;
 @property (nonatomic, strong) NSURL *bundleURL;
+@property (nonatomic, strong) CBZSplashView *splashView;
 @end
 
 @implementation RCCManager
@@ -127,8 +133,9 @@
 
   self.bundleURL = bundleURL;
   self.sharedBridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-  
-  [self showSplashScreen];
+
+  //[self showSplashScreen];
+  [self customLoadSplash];
 }
 
 -(void)showSplashScreen
@@ -216,6 +223,25 @@
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
   return self.bundleURL;
+}
+
+- (void) customLoadSplash
+{
+  UIImage *icon = [UIImage imageNamed:@"suiyimenlogo"];
+  UIColor *color = [UIColor colorWithHexString:kTwitterColor];
+  CBZSplashView *splashView = [CBZSplashView splashViewWithIcon:icon backgroundColor:color];
+  splashView.animationDuration = 1.2;
+  if (splashView != nil)
+  {
+    UIViewController *splashVC = [[UIViewController alloc] init];
+    splashVC.view = splashView;
+    self.splashView = splashView;
+    [self.splashView startAnimation];
+    id<UIApplicationDelegate> appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate.window.rootViewController = splashVC;
+    [appDelegate.window makeKeyAndVisible];
+  }
+  
 }
 
 @end
