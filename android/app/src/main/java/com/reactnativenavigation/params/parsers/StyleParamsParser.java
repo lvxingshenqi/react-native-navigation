@@ -32,6 +32,9 @@ public class StyleParamsParser {
         result.contextualMenuBackgroundColor = getColor("contextualMenuBackgroundColor", getDefaultContextualMenuBackgroundColor());
 
         result.topBarColor = getColor("topBarColor", getDefaultTopBarColor());
+        result.topBarReactView = params.getString("topBarReactView");
+        result.topBarReactViewAlignment = params.getString("topBarReactViewAlignment");
+        result.topBarReactViewInitialProps = getBundle("topBarReactViewInitialProps");
         result.titleBarHideOnScroll = getBoolean("titleBarHideOnScroll", getDefaultTitleBarHideOnScroll());
         result.topBarTransparent = getBoolean("topBarTransparent", getDefaultTopBarHidden());
         result.topBarCollapseOnScroll = getBoolean("topBarCollapseOnScroll", false);
@@ -272,5 +275,9 @@ public class StyleParamsParser {
 
     private int getInt(String key, int defaultValue) {
         return params.containsKey(key) ? params.getInt(key) : defaultValue;
+    }
+
+    private Bundle getBundle(String key) {
+        return params.containsKey(key) ? params.getBundle(key) : Bundle.EMPTY;
     }
 }
