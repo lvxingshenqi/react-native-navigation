@@ -8,8 +8,18 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Window;
+import android.widget.Toast;
+
+import com.sina.weibo.sdk.WbSdk;
+import com.sina.weibo.sdk.api.MultiImageObject;
+import com.sina.weibo.sdk.api.WeiboMultiMessage;
+import com.sina.weibo.sdk.api.TextObject;
+import com.sina.weibo.sdk.auth.AuthInfo;
+import com.sina.weibo.sdk.share.WbShareCallback;
+import com.sina.weibo.sdk.share.WbShareHandler;
 
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
@@ -42,7 +52,7 @@ import com.reactnativenavigation.views.SideMenu.Side;
 
 import java.util.List;
 
-public class NavigationActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler, Subscriber, PermissionAwareActivity {
+public class NavigationActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler, Subscriber, PermissionAwareActivity, WbShareCallback {
 
     /**
      * Although we start multiple activities, we make sure to pass Intent.CLEAR_TASK | Intent.NEW_TASK
@@ -59,6 +69,14 @@ public class NavigationActivity extends AppCompatActivity implements DefaultHard
     private Layout layout;
     @Nullable private PermissionListener mPermissionListener;
 
+    private String TAG = this.getClass().getSimpleName();
+    public static WbShareHandler wbShareHandler;
+    public static final String WB_APP_KEY      = "3923295450";
+    public static final String WB_REDIRECT_URL = "http://test.suiyimenapp.com:3808/media/callback";
+    public static final String WB_SCOPE = "email,direct_messages_read,direct_messages_write,"
+            + "friendships_groups_read,friendships_groups_write,statuses_to_me_read,"
+            + "follow_app_official_microblog," + "invitation_write";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +91,11 @@ public class NavigationActivity extends AppCompatActivity implements DefaultHard
         createModalController();
         createLayout();
         NavigationApplication.instance.getActivityCallbacks().onActivityCreated(this, savedInstanceState);
+
+        WbSdk.install(this,new AuthInfo(this, WB_APP_KEY, WB_REDIRECT_URL, WB_SCOPE));
+        wbShareHandler = new WbShareHandler(this);
+        wbShareHandler.registerApp();
+        wbShareHandler.setProgressColor(0xff33b5e5);
     }
 
     private void setOrientation() {
@@ -128,6 +151,7 @@ public class NavigationActivity extends AppCompatActivity implements DefaultHard
         super.onNewIntent(intent);
         getReactGateway().onNewIntent(intent);
         NavigationApplication.instance.getActivityCallbacks().onNewIntent(intent);
+        wbShareHandler.doResultIntent(intent,this);
     }
 
     @Override
@@ -452,5 +476,29 @@ public class NavigationActivity extends AppCompatActivity implements DefaultHard
 
     public String getCurrentlyVisibleScreenId() {
         return modalController.isShowing() ? modalController.getCurrentlyVisibleScreenId() : layout.getCurrentlyVisibleScreenId();
+    }
+
+    @Override
+    public void onWbShareSuccess() {
+        Toast.makeText(this, "微博分享成功", Toast.LENGTH_LONG).show();
+        Log.i(TAG, "onWbShareSuccess");
+//        if(null != WeiboModule.shareCallback)
+//            WeiboModule.shareCallback.invoke("success");
+    }
+
+    @Override
+    public void onWbShareFail() {
+        Toast.makeText(this, "微博分享失败", Toast.LENGTH_LONG).show();
+        Log.i(TAG, "onWbShareFail");
+//        if(null != WeiboModule.shareCallback)
+//            WeiboModule.shareCallback.invoke("fail");
+    }
+
+    @Override
+    public void onWbShareCancel() {
+        Toast.makeText(this, "微博分享取消", Toast.LENGTH_LONG).show();
+        Log.i(TAG, "onWbShareCancel");
+//        if(null != WeiboModule.shareCallback)
+//            WeiboModule.shareCallback.invoke("cancel");
     }
 }
